@@ -50,9 +50,13 @@ public class PlaceOnPlane : MonoBehaviour
         }
         else
         {
+            //완전 랜덤
             //  var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(Random.Range(0.35f, 0.65f), Random.Range(0.35f, 0.65f)));
+            //정가운데 생성
             // var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f,0.5f));
 
+
+            //1초에 하나씩 생성하는 기능
             //  timer += Time.deltaTime;
 
             //if (timer < waitingTime)
@@ -62,10 +66,16 @@ public class PlaceOnPlane : MonoBehaviour
             //}
 
 
+            //랜덤으로 변환
+            //1 - if (!Utility.TryGetInputPosition(out touchPosition)) return; 주석처리
+            // 2 - ray에 touchPosition screenCenter로 바꾸기
+            //3 -             if (Utility.Raycast(touchPosition, out Pose hitPose))  touchPosition screenCenter로 바꾸기
+
+           
+
             if (!Utility.TryGetInputPosition(out touchPosition)) return;
-
-
             ray = arCamera.ScreenPointToRay(touchPosition);
+
 
             PlacedObject.SelectedObject = null;
 
