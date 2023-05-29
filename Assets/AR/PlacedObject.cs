@@ -150,7 +150,8 @@ public class PlacedObject : MonoBehaviour
 
                     Vars.Check_idx++;
 
-                    string word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
+                    //string word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
+                    string word = "»ç°ú";
                     //string word = "°ø";
                      if (word.Equals(curText))
                     {

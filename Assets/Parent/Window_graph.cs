@@ -74,7 +74,7 @@ public class Window_graph : MonoBehaviour
 			float xPosition = (xSize + i * xSize);
 			float yPosition = (valueList[i] / yMaximum) * graphHeight;
 			GameObject circleGameObject = CreateCircle(new Vector2(xPosition, yPosition));
-			if (lastCircleGameObject != null)
+			if (lastCircleGameObject != null && valueList[i] != 0)
 			{
 				CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition, circleGameObject.GetComponent<RectTransform>().anchoredPosition, color);
 

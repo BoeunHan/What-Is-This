@@ -89,6 +89,6 @@ public class Level2PopUpDirector : MonoBehaviour
     }
     void GotoObjectDetection()
     { 
-        SceneManager.LoadScene("HomeScene");
+        SceneManager.LoadScene("Level3Scene");
     }
 }
