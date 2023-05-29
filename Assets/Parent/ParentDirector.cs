@@ -50,7 +50,7 @@ public class ParentDirector : MonoBehaviour
 		parentHome = GameObject.Find("TextparentHome").GetComponent<Text>();
 		btnParentBack = GameObject.Find("btnParentBack").GetComponent<Button>();
 		childName = GameObject.Find("childName").GetComponent<Text>();
-		childName.text = UserInfo.GetName();
+		childName.text = "ÀÌ½ÂÀç";
 		//Screen.orientation = ScreenOrientation.Portrait;
 		SetDays();
 		if (results.Count > 0) { results.Clear(); }
