@@ -18,6 +18,20 @@ public class PlaceOnPlane : MonoBehaviour
    private int correct_idx=0;
 
     // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+        Vars.word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
+        TensorFlowLite.Consonant cons = new TensorFlowLite.Consonant(Vars.word);
+        Vars.AR_correct = cons.GetCorrectArray();
+        Vars.TotalWords = Vars.AR_correct.Length;
+        Vars.FinalWords = Vars.AR_correct.Length;
+        Vars.Check_idx = 0;
+        timer = 0;
+        waitingTime = 1;
+    }
+
     private void Start()
     {
 
