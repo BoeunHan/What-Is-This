@@ -31,8 +31,7 @@ public class PlacedObject : MonoBehaviour
             if (value != null)
             {
                 string Corrent_Name = "";
-                // string Currnt_name = value.transform.parent.name;
-                string Currnt_name = "°³";
+                string Currnt_name = value.transform.parent.name;
 
 
                 if ((Vars.Check_idx + 1) % 3 == 0)
