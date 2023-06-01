@@ -31,7 +31,10 @@ public class PlacedObject : MonoBehaviour
             if (value != null)
             {
                 string Corrent_Name = "";
-                string Currnt_name = value.transform.parent.name;
+                // string Currnt_name = value.transform.parent.name;
+                string Currnt_name = "°³";
+
+
                 if ((Vars.Check_idx + 1) % 3 == 0)
                 {
                     if (Vars.AR_correct[Vars.Check_idx] == 0)
@@ -39,6 +42,7 @@ public class PlacedObject : MonoBehaviour
                         Vars.Check_idx++;
                         return;
                     }
+
 
                     if (Vars.AR_correct[Vars.Check_idx] == 1) Corrent_Name = "PlacedH0(Clone)";
                     if (Vars.AR_correct[Vars.Check_idx] == 2) Corrent_Name = "PlacedH1(Clone)";

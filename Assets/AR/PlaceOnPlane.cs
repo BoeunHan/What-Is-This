@@ -22,7 +22,7 @@ public class PlaceOnPlane : MonoBehaviour
     {
 
         Vars.word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
-		TensorFlowLite.Consonant cons = new TensorFlowLite.Consonant(Vars.word);
+        TensorFlowLite.Consonant cons = new TensorFlowLite.Consonant(Vars.word);
         Vars.AR_correct = cons.GetCorrectArray();
         Vars.TotalWords = Vars.AR_correct.Length;
         Vars.FinalWords = Vars.AR_correct.Length;
@@ -36,6 +36,16 @@ public class PlaceOnPlane : MonoBehaviour
 
         if (Vars.TotalWords<=0)
         {
+
+            if ((Vars.Check_idx + 1) % 3 == 0)
+            {
+                if (Vars.AR_correct[Vars.Check_idx] == 0)
+                {
+                    Vars.Check_idx++;
+                    return;
+                }
+            }
+
             if (!Utility.TryGetInputPosition(out touchPosition)) return;
 
             ray = arCamera.ScreenPointToRay(touchPosition);
