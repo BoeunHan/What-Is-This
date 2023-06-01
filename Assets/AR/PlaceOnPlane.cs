@@ -22,7 +22,8 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Awake()
     {
-        Vars.word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
+		Debug.Log("Awake 함수 실행");
+		Vars.word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
         TensorFlowLite.Consonant cons = new TensorFlowLite.Consonant(Vars.word);
         Vars.AR_correct = cons.GetCorrectArray();
         Vars.TotalWords = Vars.AR_correct.Length;
@@ -30,20 +31,25 @@ public class PlaceOnPlane : MonoBehaviour
         Vars.Check_idx = 0;
         timer = 0;
         waitingTime = 1;
-    }
+		correct_idx = 0;
+		Debug.Log("Awake 함수 끝");
+	}
 
     private void Start()
     {
-
+        Debug.Log("Start 함수 실행");
         Vars.word = TensorFlowLite.SsdSample.detection_text.Replace("\r", "");
         TensorFlowLite.Consonant cons = new TensorFlowLite.Consonant(Vars.word);
         Vars.AR_correct = cons.GetCorrectArray();
         Vars.TotalWords = Vars.AR_correct.Length;
+        Debug.Log("AR : Total words" + Vars.TotalWords.ToString());
         Vars.FinalWords = Vars.AR_correct.Length;
        Vars.Check_idx = 0;
         timer = 0;
         waitingTime = 1;
-    }
+		correct_idx = 0;
+		Debug.Log("Start 함수 끝");
+	}
         // Update is called once per frame
         private void Update()
     {

@@ -21,7 +21,8 @@ public class Level3Director : MonoBehaviour
 
     void Start()
     {
-        audioSource = GameObject.Find("Director").GetComponent<AudioSource>();
+		success = false;
+		audioSource = GameObject.Find("Director").GetComponent<AudioSource>();
         popupDirector = GameObject.Find("PopUpDirector").GetComponent<Level3PopUpDirector>();
 		curState = GameObject.Find("TextBox").GetComponentInChildren<Text>();
         btSound = GameObject.Find("ButtonSound").GetComponent<Button>();
