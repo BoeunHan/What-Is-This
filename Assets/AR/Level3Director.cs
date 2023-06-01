@@ -17,6 +17,7 @@ public class Level3Director : MonoBehaviour
     public int life = 3;
     public static int calllife = 3;
     public static bool success = false;
+    public int popup = 0;
 
     void Start()
     {
@@ -79,8 +80,9 @@ public class Level3Director : MonoBehaviour
 
     void Update()
     {
-        if (success)
+        if (success && popup == 0)
         {
+            popup = 1;
             popupDirector.ShowPopUp(true);
         }
 

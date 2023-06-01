@@ -39,7 +39,7 @@ public class Level3PopUpDirector : MonoBehaviour
             textDirectionObject.GetComponent<Text>().text = "Go back";
 
         btNextObject.GetComponent<Button>().onClick.AddListener(GotoObjectDetection);
-
+        Level3Director.calllife = 3;
         if (success)
         {
             audioSource.PlayOneShot(success_audio);
